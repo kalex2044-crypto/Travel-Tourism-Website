@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:url('images/booking-bg.jpg') no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.form-container{
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:15px;
+    width:350px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:orange;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:black;
+    color:white;
+}
+</style>
+
+<script>
+function validateForm(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let members=document.getElementById("members").value;
+
+if(name==""||email==""||members==""){
+alert("All fields are required");
+return false;
+}
+
+if(members<=0){
+alert("Enter valid number of members");
+return false;
+}
+
+alert("Booking Successful!");
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="form-container">
+<h2>Book Your Tour</h2>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="email" id="email" placeholder="Email">
+<input type="date">
+<input type="number" id="members" placeholder="Number of Members">
+
+<button type="submit">Book Now</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

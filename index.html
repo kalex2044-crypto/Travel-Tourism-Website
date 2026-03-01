@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel World</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    z-index:1000;
+}
+
+header h1{
+    color:white;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:orange;
+}
+
+.hero{
+    height:100vh;
+    background:url('images/home-bg.jpg') no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.6);
+    padding:40px;
+    border-radius:15px;
+}
+
+.hero h2{
+    font-size:45px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:orange;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+}
+
+.features{
+    padding:60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.feature-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Travel World</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="destinations.html">Destinations</a>
+<a href="packages.html">Packages</a>
+<a href="booking.html">Booking</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Explore The World With Us</h2>
+<p>Best travel experience at affordable prices</p>
+<br>
+<button class="btn" onclick="location.href='packages.html'">View Packages</button>
+</div>
+</section>
+
+<section class="features">
+<div class="feature-card">
+<h3>Affordable Prices</h3>
+<p>Budget friendly international & domestic tours.</p>
+</div>
+
+<div class="feature-card">
+<h3>Best Destinations</h3>
+<p>Explore top global destinations with comfort.</p>
+</div>
+
+<div class="feature-card">
+<h3>24/7 Support</h3>
+<p>Customer support anytime, anywhere.</p>
+</div>
+</section>
+
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "ada8210e-0173-4b3d-b43c-9d39f842a4f5", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "27e7b12d-b959-4ed0-9bed-8e29098aa75a", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Packages</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:url('images/package-bg.jpg') no-repeat center/cover;
+}
+
+.container{
+    background:rgba(0,0,0,0.7);
+    padding:50px;
+    color:white;
+    text-align:center;
+}
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    color:black;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+}
+
+select,input{
+    padding:10px;
+    margin:10px;
+    width:200px;
+}
+
+button{
+    padding:10px 20px;
+    background:orange;
+    border:none;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function calculate(){
+let price=document.getElementById("package").value;
+let persons=document.getElementById("persons").value;
+
+if(persons=="" || persons<=0){
+alert("Enter valid number of persons");
+return;
+}
+
+let total=price*persons;
+document.getElementById("total").innerHTML="Total Price: ₹"+total;
+}
+</script>
+
+</head>
+
+<body>
+
+<section class="container">
+<h2>Our Tour Packages</h2>
+
+<div class="package-grid">
+
+<div class="card">
+<img src="images/package1.jpg">
+<h3>Goa Trip</h3>
+<p class="price">₹15,000</p>
+</div>
+
+<div class="card">
+<img src="images/package2.jpg">
+<h3>Paris Trip</h3>
+<p class="price">₹1,20,000</p>
+</div>
+
+<div class="card">
+<img src="images/package3.jpg">
+<h3>Switzerland Tour</h3>
+<p class="price">₹1,50,000</p>
+</div>
+
+</div>
+
+<h2>Package Price Calculator</h2>
+
+<select id="package">
+<option value="15000">Goa - 15000</option>
+<option value="120000">Paris - 120000</option>
+<option value="150000">Switzerland - 150000</option>
+</select>
+
+<br>
+<input type="number" id="persons" placeholder="Number of Persons">
+
+<br>
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="total"></h3>
+
+</section>
+
+</body>
+</html>

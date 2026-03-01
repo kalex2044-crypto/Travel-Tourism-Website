@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations | Travel World</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('images/home-bg.jpg') no-repeat center/cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+            color: white;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            padding: 0 15px 15px;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media(max-width:768px) {
+            header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Travel World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="packages.html">Tour Packages</a>
+        <a href="booking.html">Booking</a>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>Explore Our Popular Destinations</h2>
+
+    <div class="destination-grid">
+
+        <!-- Paris -->
+        <div class="card">
+            <img src="images/paris.jpg" alt="Paris">
+            <h3>Paris, France</h3>
+            <p>Visit the beautiful city of lights. Explore the Eiffel Tower, cafes and romantic streets.</p>
+        </div>
+
+        <!-- Switzerland -->
+        <div class="card">
+            <img src="images/mountain.jpg" alt="Switzerland">
+            <h3>Switzerland</h3>
+            <p>Experience breathtaking Alps, snowy mountains and scenic train journeys.</p>
+        </div>
+
+        <!-- Bali -->
+        <div class="card">
+            <img src="images/beach.jpg" alt="Bali">
+            <h3>Bali, Indonesia</h3>
+            <p>Relax at beautiful beaches and enjoy luxury resorts and vibrant culture.</p>
+        </div>
+
+        <!-- Goa -->
+        <div class="card">
+            <img src="images/goa.jpg" alt="Goa">
+            <h3>Goa, India</h3>
+            <p>Enjoy beaches, nightlife and water sports in India’s most famous tourist state.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Travel World | All Rights Reserved
+</footer>
+
+</body>
+</html>
